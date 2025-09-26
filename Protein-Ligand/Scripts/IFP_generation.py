@@ -787,7 +787,9 @@ def rank_IFP_resi(df,ifp_type=['AR','HY','HA','HD','HL','IP','IN',"IO","WB"]):
             if c[3:].isdigit():    number.append(int(c[3:]))
             elif c[4:].isdigit():    number.append(int(c[4:]))
             elif c[5:].isdigit():    number.append(int(c[5:]))
-            else: number.append(int(c[6:]))
+            elif c[6:].isdigit():    number.append(int(c[6:]))
+            else: number.append(int(c[7:]))
+           
     columns_IFP = np.asarray(columns_IFP)[np.argsort(np.asarray(number))]
 
     columns_RE = []  # standard IFP
